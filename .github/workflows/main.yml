@@ -6,7 +6,7 @@ on:
     branches:
       - main
     paths: # só dispara se os arquivos nessas pastas mudarem
-      - "src/**" #só mudanças no código fonte
+      - "src/**" # só mudanças no código fonte
       - ".github/workflows/**" # mudanças nos próprios pipelines
   workflow_dispatch: # Habilitar o botão "Run workflow" no GitHub Actions
 
@@ -32,13 +32,13 @@ jobs:
       - name: Rodar o build
         run: npm run build
         env: 
-          TMDB_API_URL: ${{ vars.TMDB_API_URL}}
-          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY}}
-          NEXT_PUBLIC_TMDB_API_IMG_URL: ${{ vars.NEXT_PUBLIC_TMDB_API_IMG_URL}}
+          TMDB_API_URL: ${{ vars.TMDB_API_URL}} # variável definida em "Repository Variables"
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY}} # segredo definido em "Repository Secrets"
+          NEXT_PUBLIC_TMDB_API_IMG_URL: ${{ vars.NEXT_PUBLIC_TMDB_API_IMG_URL}} # variável pública
 
   tests:
-    runs-on: unbuntu-latest # Imagem da maquina usada no CI
-    needs: build
+    runs-on: ubuntu-latest # Imagem da máquina usada no CI (corrigido de "unbuntu-latest")
+    needs: build # só roda depois do job "build"
 
     steps:
       - name: Checkout do código
@@ -57,8 +57,8 @@ jobs:
       - name: Rodar lint
         run: npm run lint
 
-      - name: Veriicar formatação
-        run: npm run format -- -- check
+      - name: Verificar formatação # corrigido o nome do step
+        run: npm run format --check # ajuste conforme script no package.json
 
       - name: Rodar testes
         run: npm run test
