@@ -32,9 +32,9 @@ jobs:
       - name: Rodar o build
         run: npm run build
         env:
-          TMDB_API_URL: ${{ vars.TMDB_API_URL}} # variável definida em "Repository Variables"
-          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY}} # segredo definido em "Repository Secrets"
-          NEXT_PUBLIC_TMDB_API_IMG_URL: ${{ vars.NEXT_PUBLIC_TMDB_API_IMG_URL}} # variável pública
+          TMDB_API_URL: ${{ vars.TMDB_API_URL }} # variável definida em "Repository Variables"
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }} # segredo definido em "Repository Secrets"
+          NEXT_PUBLIC_TMDB_API_IMG_URL: ${{ vars.NEXT_PUBLIC_TMDB_API_IMG_URL }} # variável pública
 
   tests:
     runs-on: ubuntu-latest # Imagem da máquina usada no CI
