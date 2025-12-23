@@ -1,7 +1,7 @@
 # Nome do workflow, aparece na "Actions"
 name: Pipeline CI/CD
 
-on: 
+on:
   push:
     branches:
       - main
@@ -14,7 +14,7 @@ jobs:
   # Primeiro job: build
   build:
     runs-on: ubuntu-latest # Imagem da máquina usada no CI
-    
+
     steps:
       - name: Checkout do código
         uses: actions/checkout@v5
@@ -22,19 +22,19 @@ jobs:
       - name: Instalação do Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: "20"
           cache: "npm"
           cache-dependency-path: package-lock.json
-          
+
       - name: Instalação das dependências
         run: npm install
 
       - name: Rodar o build
         run: npm run build
-        env: 
-          TMDB_API_URL: ${{ vars.TMDB_API_URL}} # variável definida em "Repository Variables"
-          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY}} # segredo definido em "Repository Secrets"
-          NEXT_PUBLIC_TMDB_API_IMG_URL: ${{ vars.NEXT_PUBLIC_TMDB_API_IMG_URL}} # variável pública
+        env:
+          TMDB_API_URL: ${{ vars.TMDB_API_URL }} # variável definida em "Repository Variables"
+          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }} # segredo definido em "Repository Secrets"
+          NEXT_PUBLIC_TMDB_API_IMG_URL: ${{ vars.NEXT_PUBLIC_TMDB_API_IMG_URL }} # variável pública
 
   tests:
     runs-on: ubuntu-latest # Imagem da máquina usada no CI
@@ -47,18 +47,18 @@ jobs:
       - name: Instalação do Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: "20"
           cache: "npm"
           cache-dependency-path: package-lock.json
-          
+
       - name: Instalação das dependências
-        run: npm install    
-        
+        run: npm install
+
       - name: Rodar lint
         run: npm run lint
 
-      - name: Verificar formatação 
+      - name: Verificar formatação # agora usa o script format:check
         run: npm run format:check
 
-      - name: Rodar testes 
+      - name: Rodar testes # agora usa o script test (sem watchAll)
         run: npm run test
