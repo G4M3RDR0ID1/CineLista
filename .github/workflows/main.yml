@@ -84,9 +84,5 @@ jobs:
       - name: Deploy pra Vercel
         run: vercel --prod --yes --token=${{secrets.VERCEL_TOKEN}}
         env:
-<<<<<<< HEAD
           VERCEL_ORG_ID: ${{secrets.VERCEL_ORG_ID}}
-=======
-          VERCEL_ORG_ID: ${{secrets.VERCEL_ORG_ID}} 
->>>>>>> 83d55fb6a6fa22c073380cf4bf6eaabfb1024df4
           VERCEL_PROJECT_ID: ${{secrets.VERCEL_PROJECT_ID}}
