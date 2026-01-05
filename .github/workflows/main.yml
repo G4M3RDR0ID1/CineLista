@@ -65,7 +65,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest # Imagem da máquina usada no CI
-    needs: tests # só roda depois do job "build"
+    needs: tests # só roda depois do job "tests"
 
     steps:
       - name: Checkout do código
