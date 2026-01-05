@@ -1,14 +1,9 @@
-<<<<<<< HEAD
 # CineLista
-=======
-#  CineLista
->>>>>>> 83d55fb6a6fa22c073380cf4bf6eaabfb1024df4
 
 CineLista é um projeto web desenvolvido com **Next.js** que tem como objetivo permitir a visualização e organização de filmes em uma lista simples e intuitiva. O projeto foi criado com foco em aprendizado, prática de React/Next.js e consumo de APIs.
 
 ---
 
-<<<<<<< HEAD
 ## Tecnologias Utilizadas
 
 - **Next.js**
@@ -31,30 +26,6 @@ CineLista é um projeto web desenvolvido com **Next.js** que tem como objetivo p
 ---
 
 ## Estrutura do Projeto
-=======
-##  Tecnologias Utilizadas
-
-* **Next.js**
-* **React**
-* **TypeScript**
-* **HTML5**
-* **CSS3**
-* **Node.js**
-
----
-
-##  Funcionalidades
-
-* Integração com a **API do TMDB (The Movie Database)**
-* Exibição de filmes populares/destaques
-* Estrutura moderna utilizando componentes React
-* Organização de arquivos seguindo o padrão do Next.js
-* Consumo de API externa para dados reais de filmes
-
----
-
-##  Estrutura do Projeto
->>>>>>> 83d55fb6a6fa22c073380cf4bf6eaabfb1024df4
 
 A estrutura do projeto segue o padrão do **Next.js (App Router)**, com separação por responsabilidades:
 
@@ -77,11 +48,7 @@ CineLista/
 
 ---
 
-<<<<<<< HEAD
 ## Como Executar o Projeto
-=======
-##  Como Executar o Projeto
->>>>>>> 83d55fb6a6fa22c073380cf4bf6eaabfb1024df4
 
 Siga os passos abaixo para rodar o projeto localmente:
 
@@ -123,7 +90,6 @@ http://localhost:3000
 
 ---
 
-<<<<<<< HEAD
 ## Objetivo do Projeto
 
 Este projeto tem fins **educacionais**, sendo utilizado para praticar:
@@ -144,28 +110,6 @@ Este projeto tem fins **educacionais**, sendo utilizado para praticar:
 - Paginação de resultados
 - Melhorias no layout e responsividade
 - Autenticação de usuário
-=======
-##  Objetivo do Projeto
-
-Este projeto tem fins **educacionais**, sendo utilizado para praticar:
-
-* Componentização com React
-* Estrutura e conceitos do Next.js
-* Uso de TypeScript em aplicações web
-* Consumo de APIs REST (TMDB)
-* Organização de projetos front-end
-
----
-
-##  Melhorias Futuras
-
-* Sistema de busca por título
-* Página de detalhes do filme
-* Opção de favoritos
-* Paginação de resultados
-* Melhorias no layout e responsividade
-* Autenticação de usuário
->>>>>>> 83d55fb6a6fa22c073380cf4bf6eaabfb1024df4
 
 ---
 
@@ -173,11 +117,7 @@ Este projeto tem fins **educacionais**, sendo utilizado para praticar:
 
 Desenvolvido por **Lucas Lana** 👋
 
-<<<<<<< HEAD
-- GitHub: [G4M3RDR0ID1](https://github.com/G4M3RDR0ID1)
-=======
-* GitHub: [G4M3RDR0ID1](https://github.com/G4M3RDR0ID1)
->>>>>>> 83d55fb6a6fa22c073380cf4bf6eaabfb1024df4
+GitHub: [G4M3RDR0ID1](https://github.com/G4M3RDR0ID1)
 
 ---
 
