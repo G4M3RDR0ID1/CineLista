@@ -1,36 +1,124 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CineLista
 
-## Getting Started
+CineLista é um projeto web desenvolvido com **Next.js** que tem como objetivo permitir a visualização e organização de filmes em uma lista simples e intuitiva. O projeto foi criado com foco em aprendizado, prática de React/Next.js e consumo de APIs.
 
-First, run the development server:
+---
+
+## Tecnologias Utilizadas
+
+- **Next.js**
+- **React**
+- **TypeScript**
+- **HTML5**
+- **CSS3**
+- **Node.js**
+
+---
+
+## Funcionalidades
+
+- Integração com a **API do TMDB (The Movie Database)**
+- Exibição de filmes populares/destaques
+- Estrutura moderna utilizando componentes React
+- Organização de arquivos seguindo o padrão do Next.js
+- Consumo de API externa para dados reais de filmes
+
+---
+
+## Estrutura do Projeto
+
+A estrutura do projeto segue o padrão do **Next.js (App Router)**, com separação por responsabilidades:
+
+```bash
+CineLista/
+├── app/
+│ ├── layout.tsx # Layout principal da aplicação
+│ ├── page.tsx # Página inicial
+│ ├── globals.css # Estilos globais
+│ └── (outras rotas)/ # Demais páginas do app
+├── components/ # Componentes reutilizáveis da interface
+├── services/ # Serviços de integração com APIs (TMDB)
+├── public/ # Arquivos públicos (imagens, ícones, etc.)
+├── .env.local # Variáveis de ambiente (API KEY do TMDB)
+├── next.config.js # Configurações do Next.js
+├── package.json # Dependências e scripts do projeto
+├── tsconfig.json # Configurações do TypeScript
+└── README.md # Documentação do projeto
+```
+
+---
+
+## Como Executar o Projeto
+
+Siga os passos abaixo para rodar o projeto localmente:
+
+1. Clone o repositório:
+
+```bash
+git clone https://github.com/G4M3RDR0ID1/CineLista.git
+```
+
+2. Acesse a pasta do projeto:
+
+```bash
+cd CineLista
+```
+
+3. Instale as dependências:
+
+```bash
+npm install
+```
+
+4. Configure a variável de ambiente da API do TMDB:
+
+```bash
+NEXT_PUBLIC_TMDB_API_KEY=SUA_CHAVE_AQUI
+```
+
+5. Execute o servidor de desenvolvimento:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+6. Abra no navegador:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## Objetivo do Projeto
 
-To learn more about Next.js, take a look at the following resources:
+Este projeto tem fins **educacionais**, sendo utilizado para praticar:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Componentização com React
+- Estrutura e conceitos do Next.js
+- Uso de TypeScript em aplicações web
+- Consumo de APIs REST (TMDB)
+- Organização de projetos front-end
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Melhorias Futuras
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Sistema de busca por título
+- Página de detalhes do filme
+- Opção de favoritos
+- Paginação de resultados
+- Melhorias no layout e responsividade
+- Autenticação de usuário
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido por **Lucas Lana** 👋
+
+- GitHub: [G4M3RDR0ID1](https://github.com/G4M3RDR0ID1)
+
+---
+
+⭐ Se gostou do projeto, não esqueça de deixar uma estrela no repositório!
