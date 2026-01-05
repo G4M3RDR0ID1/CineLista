@@ -113,9 +113,15 @@ Este projeto tem fins **educacionais**, sendo utilizado para praticar:
 
 ---
 
-## 👨‍💻 Autor
+## Deploy
 
-Desenvolvido por **Lucas Lana** 👋
+Acesse o projeto publicado em: [CineLista no Vercel](https://cine-lista.vercel.app)
+
+---
+
+## Autor
+
+Desenvolvido por **Lucas Lana**
 
 GitHub: [G4M3RDR0ID1](https://github.com/G4M3RDR0ID1)
 

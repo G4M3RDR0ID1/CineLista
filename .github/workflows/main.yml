@@ -8,6 +8,9 @@ on:
     paths: # só dispara se os arquivos nessas pastas mudarem
       - 'src/**' # só mudanças no código fonte
       - '.github/workflows/**' # mudanças nos próprios pipelines
+  pull_request: # também roda em pull requests para a branch main
+    branches:
+      - main
   workflow_dispatch: # Habilitar o botão "Run workflow" no GitHub Actions
 
 jobs:
