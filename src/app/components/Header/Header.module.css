@@ -36,7 +36,6 @@
   background-color: rgba(229, 9, 20, 0.1);
 }
 
-
 @media (max-width: 768px) {
   .header__container {
     flex-direction: column;

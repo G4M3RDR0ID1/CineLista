@@ -7,3 +7,9 @@
   max-width: 1200px;
   margin: 0 auto;
 }
+
+.card__rating {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #f5c518;
+}

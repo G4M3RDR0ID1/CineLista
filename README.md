@@ -1,130 +1,134 @@
 # CineLista
 
-CineLista é um projeto web desenvolvido com **Next.js** que tem como objetivo permitir a visualização e organização de filmes em uma lista simples e intuitiva. O projeto foi criado com foco em aprendizado, prática de React/Next.js e consumo de APIs.
-
----
-
-## Tecnologias Utilizadas
-
-- **Next.js**
-- **React**
-- **TypeScript**
-- **HTML5**
-- **CSS3**
-- **Node.js**
+CineLista é uma aplicação web desenvolvida com **Next.js**, **React** e **TypeScript** que consome a API do **TMDB (The Movie Database)** para exibir filmes em destaque, populares e mais bem avaliados.  
+O projeto foi desenvolvido com foco em **boas práticas de front-end**, **organização de código**, **performance** e **experiência do usuário**.
 
 ---
 
 ## Funcionalidades
 
-- Integração com a **API do TMDB (The Movie Database)**
-- Exibição de filmes populares/destaques
-- Estrutura moderna utilizando componentes React
-- Organização de arquivos seguindo o padrão do Next.js
-- Consumo de API externa para dados reais de filmes
+- Listagem de filmes em destaque
+- Páginas dedicadas para:
+  - Filmes populares
+  - Filmes em alta
+  - Top filmes
+- Página de detalhes do filme com rota dinâmica
+- Renderização Server-side (SSR), Static Generation (SSG) e Revalidação
+- Layout responsivo (desktop e mobile)
+- Testes unitários para componentes, hooks e serviços
+- Tratamento de erros na comunicação com a API
+
+---
+
+## Tecnologias Utilizadas
+
+- **Next.js (App Router)**
+- **React**
+- **TypeScript**
+- **Axios**
+- **CSS Modules**
+- **Jest + Testing Library**
+- **API TMDB**
 
 ---
 
 ## Estrutura do Projeto
 
-A estrutura do projeto segue o padrão do **Next.js (App Router)**, com separação por responsabilidades:
-
-```bash
-CineLista/
-├── app/
-│ ├── layout.tsx # Layout principal da aplicação
-│ ├── page.tsx # Página inicial
-│ ├── globals.css # Estilos globais
-│ └── (outras rotas)/ # Demais páginas do app
-├── components/ # Componentes reutilizáveis da interface
-├── services/ # Serviços de integração com APIs (TMDB)
-├── public/ # Arquivos públicos (imagens, ícones, etc.)
-├── .env.local # Variáveis de ambiente (API KEY do TMDB)
-├── next.config.js # Configurações do Next.js
-├── package.json # Dependências e scripts do projeto
-├── tsconfig.json # Configurações do TypeScript
-└── README.md # Documentação do projeto
+```text
+src/
+ ├─ app/
+ │   ├─ page.tsx
+ │   ├─ layout.tsx
+ │   ├─ filmes/
+ │   └─ components/
+ ├─ lib/
+ │   └─ api/
+ ├─ hooks/
+ ├─ styles/
+ └─ types/
 ```
+
+A arquitetura foi pensada para manter **separação de responsabilidades**, **componentização** e **facilidade de manutenção**.
 
 ---
 
-## Como Executar o Projeto
+## Como rodar o projeto localmente
 
-Siga os passos abaixo para rodar o projeto localmente:
-
-1. Clone o repositório:
-
+### Clone o repositório
 ```bash
 git clone https://github.com/G4M3RDR0ID1/CineLista.git
 ```
 
-2. Acesse a pasta do projeto:
-
+### Acesse a pasta do projeto
 ```bash
 cd CineLista
 ```
 
-3. Instale as dependências:
-
+### Instale as dependências
 ```bash
 npm install
 ```
 
-4. Configure a variável de ambiente da API do TMDB:
+### Configure as variáveis de ambiente
+Crie um arquivo `.env.local` na raiz do projeto:
 
-```bash
-NEXT_PUBLIC_TMDB_API_KEY=SUA_CHAVE_AQUI
+```env
+TMDB_API_URL=https://api.themoviedb.org/3
+TMDB_API_KEY=SEU_TOKEN_DO_TMDB
 ```
 
-5. Execute o servidor de desenvolvimento:
+> O token pode ser obtido gratuitamente em: https://www.themoviedb.org/
 
+### Execute o projeto
 ```bash
 npm run dev
 ```
 
-6. Abra no navegador:
-
+Acesse no navegador:
 ```
 http://localhost:3000
 ```
 
 ---
 
-## Objetivo do Projeto
+## Testes
 
-Este projeto tem fins **educacionais**, sendo utilizado para praticar:
+O projeto possui testes unitários para garantir confiabilidade dos componentes, hooks e serviços.
 
-- Componentização com React
-- Estrutura e conceitos do Next.js
-- Uso de TypeScript em aplicações web
-- Consumo de APIs REST (TMDB)
-- Organização de projetos front-end
+Para rodar os testes:
 
----
-
-## Melhorias Futuras
-
-- Sistema de busca por título
-- Página de detalhes do filme
-- Opção de favoritos
-- Paginação de resultados
-- Melhorias no layout e responsividade
-- Autenticação de usuário
+```bash
+npm run test
+```
 
 ---
 
 ## Deploy
 
-Acesse o projeto publicado em: [CineLista no Vercel](https://cine-lista.vercel.app)
+O projeto está disponível online através do deploy na **Vercel**:
+
+**https://cine-lista.vercel.app/**  
+
+---
+
+## Destaques Técnicos
+
+- Uso de **Server Components** e **renderização híbrida**
+- Rotas dinâmicas com tratamento de erro (`notFound`)
+- Metadata dinâmica para SEO
+- Consumo de API com Axios centralizado
+- Código limpo, tipado e organizado
+- Testes unitários como diferencial de portfólio
 
 ---
 
 ## Autor
 
-Desenvolvido por **Lucas Lana**
-
-GitHub: [G4M3RDR0ID1](https://github.com/G4M3RDR0ID1)
+Projeto desenvolvido por **Lucas Lana**  
+Durante o curso de Front-End da **EBAC**, com foco em evolução técnica e boas práticas de desenvolvimento.
 
 ---
 
-⭐ Se gostou do projeto, não esqueça de deixar uma estrela no repositório!
+## Status do Projeto
+ 
+Em constante evolução para fins de aprendizado e portfólio
