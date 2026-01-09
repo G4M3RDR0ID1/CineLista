@@ -31,7 +31,7 @@ const DetalheFilme = async ({ params }: Props) => {
 
   if (!details) return notFound();
 
-  const { title, poster_path, overview } = details;
+  const { title, poster_path, overview, vote_average } = details;
 
   return (
     <div className={styles.detalhes}>
@@ -51,7 +51,10 @@ const DetalheFilme = async ({ params }: Props) => {
 
         <div className={styles.detalhes__info}>
           <h2>{title}</h2>
-          <p>{overview}</p>
+
+          <p className={styles.detalhes__overview}>{overview}</p>
+
+          <p className={styles.detalhes__nota}>⭐ {vote_average.toFixed(1)}</p>
         </div>
       </div>
     </div>
