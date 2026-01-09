@@ -25,7 +25,7 @@ const Card = ({ filme }: Props) => {
         <div className={styles.card__info}>
           <h3 className={styles.card__title}>{title}</h3>
           <p className={styles.card__description}>{resume}</p>
-          <p className={styles.card__description}>Nota: {vote_average}</p>
+          <p className={styles.card__rating}>⭐ {vote_average.toFixed(2)}</p>
         </div>
       </Link>
     </div>
