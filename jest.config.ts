@@ -17,10 +17,7 @@ const config: Config = {
     '<rootDir>/node_modules/',
     '<rootDir>/src/lib/api/1/',
   ],
-  modulePathIgnorePatterns: [
-    '<rootDir>/.next/',
-    '<rootDir>/src/lib/api/1/',
-  ],
+  modulePathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/src/lib/api/1/'],
   testPathIgnorePatterns: [
     '<rootDir>/node_modules/',
     '<rootDir>/.next/',
