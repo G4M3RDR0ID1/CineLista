@@ -3,8 +3,7 @@ import tmdbApi from './axios';
 
 jest.mock('./axios');
 
-const mockPage = (results: object[]) =>
-  Promise.resolve({ data: { results } });
+const mockPage = (results: object[]) => Promise.resolve({ data: { results } });
 
 describe('getTrendindMovies', () => {
   test('retorna filmes combinando as duas páginas', async () => {
@@ -26,7 +25,7 @@ describe('getTrendindMovies', () => {
         mockPage([
           { id: 1, title: 'Matrix' },
           { id: 2, title: 'धुरंधर: द रिवेंज' }, // Devanagari — deve ser removido
-        ])
+        ]),
       )
       .mockImplementationOnce(() => mockPage([]));
 

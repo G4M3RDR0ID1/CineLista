@@ -5,14 +5,14 @@
 :root {
   color-scheme: dark;
 
-  --color-bg:           #080c14;
+  --color-bg: #080c14;
   --color-bg-secondary: #0e1420;
-  --color-bg-elevated:  #141c2e;
-  --color-text:         #eef2ff;
-  --color-text-muted:   #93b3ea;
-  --color-accent:       #3b6fd4;
+  --color-bg-elevated: #141c2e;
+  --color-text: #eef2ff;
+  --color-text-muted: #93b3ea;
+  --color-accent: #3b6fd4;
   --color-accent-hover: #6691e0;
-  --color-border:       #1a2e4a;
+  --color-border: #1a2e4a;
 }
 
 html {

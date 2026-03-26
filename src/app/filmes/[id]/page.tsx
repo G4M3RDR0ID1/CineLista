@@ -61,7 +61,9 @@ const DetalheFilme = async ({ params }: Props) => {
       )}
 
       {/* Content — pulled up over the bottom of the hero */}
-      <div className={`max-w-7xl mx-auto px-6 py-10${backdrop_path ? ' -mt-56 relative z-10' : ''}`}>
+      <div
+        className={`max-w-7xl mx-auto px-6 py-10${backdrop_path ? ' -mt-56 relative z-10' : ''}`}
+      >
         <div className="flex flex-col md:flex-row gap-8 items-start">
           {/* Poster column */}
           <div className="flex-shrink-0 flex flex-col gap-4">
@@ -85,7 +87,10 @@ const DetalheFilme = async ({ params }: Props) => {
           <div className="flex-1 pt-2">
             <h1
               className="font-extrabold text-[#eef2ff] tracking-tight mb-4 leading-none"
-              style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', letterSpacing: '-0.02em' }}
+              style={{
+                fontSize: 'clamp(2rem, 5vw, 4rem)',
+                letterSpacing: '-0.02em',
+              }}
             >
               {title}
             </h1>
@@ -95,7 +100,9 @@ const DetalheFilme = async ({ params }: Props) => {
                 ★ {vote_average?.toFixed(1)}
               </span>
               {release_date && (
-                <span className="text-[#4a6080] text-sm">{release_date.slice(0, 4)}</span>
+                <span className="text-[#4a6080] text-sm">
+                  {release_date.slice(0, 4)}
+                </span>
               )}
             </div>
 
@@ -114,7 +121,9 @@ const DetalheFilme = async ({ params }: Props) => {
 
             {overview ? (
               <>
-                <p className="text-[#93b3ea] leading-relaxed max-w-2xl text-base">{overview}</p>
+                <p className="text-[#93b3ea] leading-relaxed max-w-2xl text-base">
+                  {overview}
+                </p>
                 {overviewFallback && (
                   <p className="mt-3 flex items-center gap-1 text-xs text-[#4a6080]">
                     🌐 Descrição em inglês (tradução indisponível)

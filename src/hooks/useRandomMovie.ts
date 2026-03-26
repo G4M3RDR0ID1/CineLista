@@ -26,7 +26,12 @@ export function useRandomMovie() {
   });
 
   const fetchRandomMovie = useCallback(async (genreId: number) => {
-    setState((prev) => ({ ...prev, isLoading: true, isRevealed: false, error: null }));
+    setState((prev) => ({
+      ...prev,
+      isLoading: true,
+      isRevealed: false,
+      error: null,
+    }));
 
     try {
       const res = await fetch(`/api/random-movie?genreId=${genreId}`);

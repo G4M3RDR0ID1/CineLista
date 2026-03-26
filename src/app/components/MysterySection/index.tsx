@@ -21,7 +21,9 @@ const MysterySection = () => {
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
         {/* Lado esquerdo */}
         <div className="flex-1 flex flex-col">
-          <span className="text-xs tracking-widest text-[#3b6fd4] mb-4">✦ SURPREENDA-SE</span>
+          <span className="text-xs tracking-widest text-[#3b6fd4] mb-4">
+            ✦ SURPREENDA-SE
+          </span>
 
           <h2 className="text-4xl font-extrabold tracking-tight text-[#eef2ff] mb-3">
             Não sabe o que assistir?
@@ -33,7 +35,10 @@ const MysterySection = () => {
 
           <div className="w-12 h-px bg-[#1a2e4a] mb-6" />
 
-          <GenreSelector selectedGenre={selectedGenre} onGenreChange={handleGenreChange} />
+          <GenreSelector
+            selectedGenre={selectedGenre}
+            onGenreChange={handleGenreChange}
+          />
 
           <button
             onClick={() => fetchRandomMovie(selectedGenre)}
@@ -52,7 +57,11 @@ const MysterySection = () => {
         </div>
 
         {/* Lado direito */}
-        <MysteryCard movie={movie} isRevealed={isRevealed} isLoading={isLoading} />
+        <MysteryCard
+          movie={movie}
+          isRevealed={isRevealed}
+          isLoading={isLoading}
+        />
       </div>
     </section>
   );

@@ -14,10 +14,14 @@ type Props = {
 const MysteryCard = ({ movie, isRevealed, isLoading }: Props) => {
   return (
     <div className={styles.cardContainer}>
-      <div className={`${styles.cardInner} ${isRevealed ? styles.revealed : ''}`}>
+      <div
+        className={`${styles.cardInner} ${isRevealed ? styles.revealed : ''}`}
+      >
         {/* FRENTE — estado misterioso */}
         <div className={styles.cardFront}>
-          <span className="text-[6rem] text-[#1e3d8f] leading-none select-none font-bold">?</span>
+          <span className="text-[6rem] text-[#1e3d8f] leading-none select-none font-bold">
+            ?
+          </span>
           <p className="text-sm text-[#4a6080] text-center px-6">
             Sua próxima sessão aguarda...
           </p>

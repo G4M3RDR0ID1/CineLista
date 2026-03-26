@@ -31,7 +31,7 @@ export async function GET(request: NextRequest) {
     );
 
     const movies = res.data.results.filter((m) =>
-      /^[\u0000-\u024F\s]*$/.test(m.title)
+      /^[\u0000-\u024F\s]*$/.test(m.title),
     );
 
     if (!movies || movies.length === 0) {
@@ -45,7 +45,9 @@ export async function GET(request: NextRequest) {
     let overviewFallback = false;
 
     if (!overview) {
-      const resEN = await tmdbApi.get<Movie>(`/movie/${movie.id}?language=en-US`);
+      const resEN = await tmdbApi.get<Movie>(
+        `/movie/${movie.id}?language=en-US`,
+      );
       overview = resEN.data.overview;
       overviewFallback = true;
     }
@@ -61,6 +63,9 @@ export async function GET(request: NextRequest) {
     });
   } catch (error) {
     console.error('Error fetching random movie:', error);
-    return NextResponse.json({ error: 'Failed to fetch movie' }, { status: 500 });
+    return NextResponse.json(
+      { error: 'Failed to fetch movie' },
+      { status: 500 },
+    );
   }
 }

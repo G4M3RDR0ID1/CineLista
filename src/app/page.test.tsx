@@ -61,7 +61,9 @@ describe('Home — lista de filmes', () => {
       makeFilme({ overview: 'Uma história sobre poder e família.' }),
     ]);
     render(await Home());
-    expect(screen.getByText('Uma história sobre poder e família.')).toBeInTheDocument();
+    expect(
+      screen.getByText('Uma história sobre poder e família.'),
+    ).toBeInTheDocument();
   });
 
   test('exibe a nota no formato "★ X.X"', async () => {
@@ -73,9 +75,7 @@ describe('Home — lista de filmes', () => {
   });
 
   test('o card possui link para a página de detalhes do filme', async () => {
-    (getTrendindMovies as jest.Mock).mockResolvedValue([
-      makeFilme({ id: 42 }),
-    ]);
+    (getTrendindMovies as jest.Mock).mockResolvedValue([makeFilme({ id: 42 })]);
     render(await Home());
     const link = screen.getByRole('link');
     expect(link).toHaveAttribute('href', '/filmes/42');
@@ -113,7 +113,9 @@ describe('Home — estado vazio', () => {
   test('não exibe mensagem de vazio quando há filmes', async () => {
     (getTrendindMovies as jest.Mock).mockResolvedValue([makeFilme()]);
     render(await Home());
-    expect(screen.queryByText('Nenhum filme encontrado.')).not.toBeInTheDocument();
+    expect(
+      screen.queryByText('Nenhum filme encontrado.'),
+    ).not.toBeInTheDocument();
   });
 
   test('não renderiza cards quando a lista está vazia', async () => {
