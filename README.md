@@ -1,8 +1,6 @@
 # CineLista
 
-Aplicação web para descoberta e visualização de filmes, construída com **Next.js 15** e integrada à API do **TMDB (The Movie Database)**. Conta com design system dark azul, card de recomendação aleatória com animação 3D e pipeline CI/CD completo.
-
-![Pipeline](https://github.com/G4M3RDR0ID1/CineLista/actions/workflows/main.yml/badge.svg)
+Aplicação web para descoberta e visualização de filmes, construída com **Next.js 15** e integrada à API do **TMDB (The Movie Database)**. Conta com um card de recomendação aleatória com animação 3D para pessoas que tem dificuladade em escolher algo para assistir.
 
 ---
 
