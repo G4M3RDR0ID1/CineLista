@@ -1,121 +1,144 @@
 # CineLista
 
-CineLista é um projeto web desenvolvido com **Next.js** que tem como objetivo permitir a visualização e organização de filmes em uma lista simples e intuitiva. O projeto foi criado com foco em aprendizado, prática de React/Next.js e consumo de APIs.
+Aplicação web para descoberta e visualização de filmes, construída com **Next.js 15** e integrada à API do **TMDB (The Movie Database)**. Conta com design system dark azul, card de recomendação aleatória com animação 3D e pipeline CI/CD completo.
 
----
-
-## Tecnologias Utilizadas
-
-- **Next.js**
-- **React**
-- **TypeScript**
-- **HTML5**
-- **CSS3**
-- **Node.js**
+![Pipeline](https://github.com/G4M3RDR0ID1/CineLista/actions/workflows/main.yml/badge.svg)
 
 ---
 
 ## Funcionalidades
 
-- Integração com a **API do TMDB (The Movie Database)**
-- Exibição de filmes populares/destaques
-- Estrutura moderna utilizando componentes React
-- Organização de arquivos seguindo o padrão do Next.js
-- Consumo de API externa para dados reais de filmes
+- **Filmes em destaque** — listagem semanal de trending via TMDB
+- **Em Alta / Populares / Top Filmes** — seções dedicadas com grid responsivo
+- **Surpreenda-se** — selecione um gênero e receba uma recomendação aleatória com flip 3D
+- **Página de detalhe** — hero backdrop, gêneros, nota, sinopse e fallback pt-BR → en-US
+- **Filtro de idioma** — filmes sem legenda em português são automaticamente removidos
+- **Design system** — paleta dark azul com tokens `brand` / `surface`, tipografia Inter
 
 ---
 
-## Estrutura do Projeto
+## Stack
 
-A estrutura do projeto segue o padrão do **Next.js (App Router)**, com separação por responsabilidades:
+| Camada | Tecnologia |
+|---|---|
+| Framework | Next.js 15 (App Router) |
+| Linguagem | TypeScript |
+| Estilo | Tailwind CSS v3 + CSS Modules |
+| Fonte | Inter (next/font/google) |
+| HTTP | Axios |
+| Testes | Jest + Testing Library |
+| CI/CD | GitHub Actions → Vercel |
+| Dados | TMDB API |
 
-```bash
-CineLista/
+---
+
+## Estrutura
+
+```
+src/
 ├── app/
-│ ├── layout.tsx # Layout principal da aplicação
-│ ├── page.tsx # Página inicial
-│ ├── globals.css # Estilos globais
-│ └── (outras rotas)/ # Demais páginas do app
-├── components/ # Componentes reutilizáveis da interface
-├── services/ # Serviços de integração com APIs (TMDB)
-├── public/ # Arquivos públicos (imagens, ícones, etc.)
-├── .env.local # Variáveis de ambiente (API KEY do TMDB)
-├── next.config.js # Configurações do Next.js
-├── package.json # Dependências e scripts do projeto
-├── tsconfig.json # Configurações do TypeScript
-└── README.md # Documentação do projeto
+│   ├── api/random-movie/     # Route Handler — filme aleatório por gênero
+│   ├── components/
+│   │   ├── Card/             # Card com poster, título, descrição e nota
+│   │   ├── Grid/             # Grid responsivo 2/3/5 colunas
+│   │   ├── Header/           # Navbar sticky com backdrop-blur
+│   │   ├── MysteryCard/      # Flip card 3D (CSS Modules)
+│   │   ├── MysterySection/   # Seção "Surpreenda-se" com GenreSelector
+│   │   └── Title/
+│   ├── filmes/
+│   │   ├── [id]/             # Página de detalhe com hero backdrop
+│   │   ├── em-alta/
+│   │   ├── populares/
+│   │   └── top-filmes/
+│   └── page.tsx              # Home
+├── hooks/
+│   └── useRandomMovie.ts     # Estado do card misterioso
+├── lib/api/
+│   ├── axios.ts              # Instância configurada do Axios
+│   └── tmdb.ts               # Funções de acesso à API do TMDB
+├── styles/globals.css
+└── types/Types.ts
 ```
 
 ---
 
-## Como Executar o Projeto
+## Como executar localmente
 
-Siga os passos abaixo para rodar o projeto localmente:
-
-1. Clone o repositório:
-
+**1. Clone o repositório**
 ```bash
 git clone https://github.com/G4M3RDR0ID1/CineLista.git
-```
-
-2. Acesse a pasta do projeto:
-
-```bash
 cd CineLista
 ```
 
-3. Instale as dependências:
-
+**2. Instale as dependências**
 ```bash
 npm install
 ```
 
-4. Configure a variável de ambiente da API do TMDB:
+**3. Configure as variáveis de ambiente**
 
-```bash
-NEXT_PUBLIC_TMDB_API_KEY=SUA_CHAVE_AQUI
+Crie um arquivo `.env.local` na raiz:
+```env
+TMDB_API_URL=https://api.themoviedb.org/3
+TMDB_API_KEY=sua_chave_bearer_aqui
+NEXT_PUBLIC_TMDB_API_IMG_URL=https://image.tmdb.org/t/p/w500
 ```
 
-5. Execute o servidor de desenvolvimento:
+> Obtenha sua chave em [themoviedb.org/settings/api](https://www.themoviedb.org/settings/api)
 
+**4. Rode o servidor de desenvolvimento**
 ```bash
 npm run dev
 ```
 
-6. Abra no navegador:
+Acesse em `http://localhost:3000`
 
-```
-http://localhost:3000
+---
+
+## Scripts disponíveis
+
+| Comando | Descrição |
+|---|---|
+| `npm run dev` | Servidor de desenvolvimento |
+| `npm run build` | Build de produção |
+| `npm run lint` | Verificação de lint (ESLint) |
+| `npm run format` | Formatar código com Prettier |
+| `npm run format:check` | Verificar formatação sem alterar |
+| `npm test` | Rodar todos os testes |
+
+---
+
+## Testes
+
+Cobertura com **Jest + Testing Library** em 4 suites:
+
+- `page.test.tsx` — renderização da home, cards, links, estado vazio
+- `tmdb.test.ts` — busca com 2 páginas, filtro de títulos não-latinos, erro de rede
+- `Title.test.tsx` — componente de título
+- `useResumoFilme.test.ts` — hook de resumo
+
+```bash
+npm test
 ```
 
 ---
 
-## Objetivo do Projeto
+## Pipeline CI/CD
 
-Este projeto tem fins **educacionais**, sendo utilizado para praticar:
+```
+push → main
+  └── build       (npm run build)
+  └── tests       (lint → format:check → jest)
+  └── deploy      (Vercel)
+```
 
-- Componentização com React
-- Estrutura e conceitos do Next.js
-- Uso de TypeScript em aplicações web
-- Consumo de APIs REST (TMDB)
-- Organização de projetos front-end
-
----
-
-## Melhorias Futuras
-
-- Sistema de busca por título
-- Página de detalhes do filme
-- Opção de favoritos
-- Paginação de resultados
-- Melhorias no layout e responsividade
-- Autenticação de usuário
+O deploy na Vercel só ocorre após build e testes passarem.
 
 ---
 
 ## Deploy
 
-Acesse o projeto publicado em: [CineLista no Vercel](https://cine-lista.vercel.app)
+[cine-lista.vercel.app](https://cine-lista.vercel.app)
 
 ---
 
@@ -124,7 +147,3 @@ Acesse o projeto publicado em: [CineLista no Vercel](https://cine-lista.vercel.a
 Desenvolvido por **Lucas Lana**
 
 GitHub: [G4M3RDR0ID1](https://github.com/G4M3RDR0ID1)
-
----
-
-⭐ Se gostou do projeto, não esqueça de deixar uma estrela no repositório!
